@@ -19,5 +19,5 @@ proc solve_3sum(input:seq[int]):int =
        for z in input:
          if x + y + z == 2020: return x*y*z
 
-echo "Answer part 1: " , solve(input("/home/pi/Documents/advent_of_code_2020/aoc_2020_01.txt"))
-echo "Answer part 2: " , solve_3sum(input("/home/pi/Documents/advent_of_code_2020/aoc_2020_01.txt"))
+echo "Answer part 1: " , solve(input("./aoc_2020_01.txt"))
+echo "Answer part 2: " , solve_3sum(input("./aoc_2020_01.txt"))

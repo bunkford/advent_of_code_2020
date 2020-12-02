@@ -31,5 +31,5 @@ proc solve2(input:seq[seq[string]]):int =
   return good
 
 
-echo "Answer part 1: ", solve1(input("/home/pi/Documents/advent_of_code_2020/aoc_2020_02.txt"))
-echo "Answer part 2: ", solve2(input("/home/pi/Documents/advent_of_code_2020/aoc_2020_02.txt"))
+echo "Answer part 1: ", solve1(input("./aoc_2020_02.txt"))
+echo "Answer part 2: ", solve2(input("./aoc_2020_02.txt"))
