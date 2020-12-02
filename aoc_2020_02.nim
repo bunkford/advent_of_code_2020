@@ -1,4 +1,4 @@
-import strutils 
+import strutils, re
 
 # put input into seq
 proc input(file:string):seq[seq[string]] =
@@ -22,11 +22,11 @@ proc solve1(input:seq[seq[string]]):int =
 proc solve2(input:seq[seq[string]]):int =
   var good:int = 0
   for password in input:
-    var letter = password[0].split(" ")[1]
+    var letter = password[0].split(" ")[1][0]
     var pos1 = password[0].split(" ")[0].split("-")[0].parseInt
     var pos2 = password[0].split(" ")[0].split("-")[1].parseInt
     
-    if password[1][pos1..pos1] == letter xor password[1][pos2..pos2] == letter:
+    if password[1][pos1] == letter xor password[1][pos2] == letter:
       inc(good)
   return good
 
