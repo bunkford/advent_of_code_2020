@@ -1,4 +1,4 @@
-import strscans, strutils, sequtils
+import strscans, strutils
 
 proc input(file:string):seq[string] =
   for line in file.lines:
