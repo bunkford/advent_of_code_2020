@@ -7,8 +7,9 @@ proc input(file: string): seq[BiggestUInt] =
 proc perms(input:seq[BiggestUInt], e:BiggestUInt):bool =
   # check permutations of two numbers in seq that add to equal e
   for a in 0 ..< input.len:
-    # a is  first didgit
+    # a is  first digit
     for b in 0 ..< input.len:
+      # b is second digit
       if a != b: # can't sum itself
         if input[a] + input[b] == e:
           return true
