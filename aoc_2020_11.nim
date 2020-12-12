@@ -143,4 +143,4 @@ proc solve2(input:seq[string]):int =
     current_input = next_input
   
 echo "Part 1 answer: ", solve1(input("./aoc_2020_11.txt")) 
-.echo "Part 2 answer: ", solve2(input("./aoc_2020_11.test")) 
+echo "Part 2 answer: ", solve2(input("./aoc_2020_11.txt")) 
