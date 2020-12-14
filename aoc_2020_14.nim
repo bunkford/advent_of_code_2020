@@ -1,5 +1,5 @@
 
-import strutils, strscans, tables, sequtils, bitops
+import strutils, strscans, tables, sequtils
 
 proc solve1(filename: string): int64 =
   var mask: string
