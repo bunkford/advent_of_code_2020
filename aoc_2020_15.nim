@@ -2,7 +2,7 @@ import tables
 
 var input = @[11,0,1,10,5,19]
 
-proc solve1(input: var seq[int]): int =
+proc solve(input: var seq[int], to: int): int =
  
   var last_spoken = initTable[int, seq[int]]() # keep track of last time it was spoken
   var count = input.toCountTable # keep track of the number of times it was spoken
@@ -10,7 +10,7 @@ proc solve1(input: var seq[int]): int =
   for k, v in input: # starting numbers
     last_spoken.mgetOrPut(v, @[]).add(k)
   
-  while input.len < 2020:
+  while input.len < to:
     let prev = input[^1] # previously spoken
     let n = 
       if count[prev] == 1: 0 # if first time the number has been spoken
@@ -26,5 +26,6 @@ proc solve1(input: var seq[int]): int =
   return input[^1] # last number spoken
 
 
-echo "Answer part 1: ", solve1(input)
+echo "Answer part 1: ", solve(input, 2020)
+echo "Answer part 2: ", solve(input, 30000000)
 
