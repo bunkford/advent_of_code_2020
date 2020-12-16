@@ -1,4 +1,4 @@
-import strscans, strutils, sequtils, tables, algorithm
+import strscans, strutils, sequtils, tables
 
 type
   Rule = object
