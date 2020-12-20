@@ -19,7 +19,7 @@ proc build_rule(rules: Table[int, string], rule_id: int): seq[string] =
     for half in halves:
       for i in half.split(" "):
         if $rule_id == i:
-          result.add("(?P>g" & $rule_id & ")")
+          result.add("(?P>g" & $rule_id & ")*")
         else:
           result.add(build_rule(rules, i.parseInt))
       result.add("|")
@@ -42,4 +42,16 @@ proc solve1(input: (Table[int, string], seq[string])):int =
     if match.isNone == false:
       inc(result)
 
+proc solve2(input: (Table[int, string], seq[string])):int = 
+  var rules = input[0]
+  rules[8] = "42 | 42 8"
+  rules[11] = "42 31 | 42 11 31"
+  var messages = input[1]
+  var regex = re("^" & build_rule(rules, 0).join() & "$")
+  for m in messages:
+    var match = m.match(regex)
+    if match.isNone == false:
+      inc(result)
+
 echo "Answer Part 1: ", solve1(input("./aoc_2020_19.txt"))
+echo "Answer Part 2: ", solve2(input("./aoc_2020_19.txt"))
